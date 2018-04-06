@@ -14,7 +14,7 @@ This is a fork from https://github.com/NightDiveStudios/shockmac, intended for i
 It will no longer compile on the Mac, as I have eliminated the metadata files (see discussion
 on their page).
 
-At the time of writing the source code copyright apparently now belongs to Night Dive Studios, Incorporated.
+At the time of this writing the source code copyright apparently now belongs to Night Dive Studios, Incorporated.
 
 LICENSE
 =======

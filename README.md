@@ -4,8 +4,8 @@ SOURCE CODE STRUCTURE
 The source code is divided into the following directories. Each directory contains a readme documenting
 the files or subdirectories in that directory.
 
-* (game)[https://github.com/nothings/shockmac/tree/master/ShockMac/game] - System Shock code
-* (Libraries)[https://github.com/nothings/shockmac/tree/master/ShockMac/Libraries] - Shared libraries used by multiple Looking Glass games: graphics, sound, UI, etc.
+* [game](https://github.com/nothings/shockmac/tree/master/ShockMac/game) - System Shock code
+* [Libraries](https://github.com/nothings/shockmac/tree/master/ShockMac/Libraries) - Shared libraries used by multiple Looking Glass games: graphics, sound, UI, etc.
 
 System Shock GPL Source Code
 ============================

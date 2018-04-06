@@ -17,6 +17,6 @@ The source code is divided into the following directories. Each directory contai
 * [PALETTE](https://github.com/nothings/shockmac/tree/master/ShockMac/Libraries/PALETTE/Source) - Palette fading/cycling effects
 * [RES](https://github.com/nothings/shockmac/tree/master/ShockMac/Libraries/RES/Source) - Data resource manager
 * [RND](https://github.com/nothings/shockmac/tree/master/ShockMac/Libraries/RND/Source) - Random number generation
-* [SND](https://github.com/nothings/shockmac/tree/master/ShockMac/Libraries/SND/Source) - Sound management. The original used John Miles AIL for audio mixing, but that's commented out in this version in favor of a mac-specific solution.
+* [SND](https://github.com/nothings/shockmac/tree/master/ShockMac/Libraries/SND/Source) - Sound management. The original used John Miles' AIL for audio mixing, but that's commented out in this version in favor of a mac-specific solution.
 * [UI](https://github.com/nothings/shockmac/tree/master/ShockMac/Libraries/UI/Source) - User interface toolkit: cursor rendering, widget implementations, hotkey handling, etc.
 * [VOX](https://github.com/nothings/shockmac/tree/master/ShockMac/Libraries/VOX/Source) - Voxel graphics library used for some of the enemies in cyberspace

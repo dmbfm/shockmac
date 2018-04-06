@@ -1,4 +1,4 @@
-[SOURCE CODE STRUCTURE](#structure)
+SOURCE CODE STRUCTURE
 =====================
 
 This subdirectory contains code that was used by multiple Looking Glass games.

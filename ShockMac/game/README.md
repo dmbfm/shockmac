@@ -6,7 +6,7 @@ This directory contains the source code for the game itself, as opposed to the h
 The source code is made up of the following files. (This README is in progress; I have not characterized all of the files yet.)
 
 * AI / Critters
-  * [ai.c](/nothings/shockmac/blob/master/ShockMac/game/AI.C)              - Lowlevel monster control, death, loot tables, etc.
+  * [ai.c](https://github.com/nothings/shockmac/blob/master/ShockMac/game/AI.C)              - Lowlevel monster control, death, loot tables, etc.
   * [newai.c](/nothings/shockmac/blob/master/ShockMac/game/NEWAI.C)        - Monster AI states, path finding, combat decisions
   * [airupt.c](/nothings/shockmac/blob/master/ShockMac/game/AIRUPT.C)      - Music mixing AI, music transition AI
 * Automap

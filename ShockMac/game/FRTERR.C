@@ -1765,7 +1765,7 @@ void fr_tfunc_grab_fast(int mask)
    fr_draw_tile();
 //   me_subclip_set(_fdt_mptr,SUBCLIP_OUT_OF_CONE);
 }
-#endif  // TFUNC_SUPPORT
+#endif  // TF_DIRECT @@correction stb/2018
 
 #ifdef WHOSE_MUMP
 

@@ -8,7 +8,6 @@ The source code is made up of the following files. (This README is in progress; 
 * AI / Critters
   * [ai.c](AI.C)              - Lowlevel monster control, death, loot tables, etc.
   * [newai.c](NEWAI.C)        - Monster AI states, path finding, combat decisions
-  * [airupt.c](AIRUPT.C)      - Music mixing AI, music transition AI
 * Automap
   * [amap.c](AMAP.C)          - Automap bitmap rendering
   * [amaploop.c](AMAPLOOP.C)  - Automap interactive processing for fullscreen
@@ -22,6 +21,7 @@ The source code is made up of the following files. (This README is in progress; 
     * [biohelp.c](BIOHELP.C)  - If you have Bioscan upgrade, configure which "biorhythms" are displayed by [status.c]
 * Audio
   * [audiolog.c](AUDIOLOG.C)  - Audio log player
+  * [airupt.c](AIRUPT.C)      - Music mixing AI, music transition AI
 * Trap/Trigger system, i.e. designer-created actions that respond to player/world/game events
   * "Trigger" - An object that reacts when it detects player is in a certain place, has done a certain action, etc.
   * "Trap" - Behaviors that designers can make happen in reaction to triggers

@@ -3,7 +3,9 @@ SOURCE CODE STRUCTURE
 
 This subdirectory contains code that was used by multiple Looking Glass games.
 
-The source code is divided into the following directories. Each directory contains a readme documenting the files in that directory.
+The source code is divided into the following directories. This documentation
+is in progress; none of the subdirectories named below have any documentation yet.
+<!-- Each directory contains a readme documenting the files in that directory. --!>
 
 * [2D](https://github.com/nothings/shockmac/tree/master/ShockMac/Libraries/2D/Source) - Graphics code on 2D pixel grids, including texture mappers
 * [3D](https://github.com/nothings/shockmac/tree/master/ShockMac/Libraries/3D/Source) - Graphics code that operates on 3D points and objects, including transformations & BSP-tree-based object renderer

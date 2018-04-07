@@ -3,7 +3,7 @@ SOURCE CODE STRUCTURE
 
 This directory contains the source code for the game itself, as opposed to the helper libraries that are found elsewhere.
 
-The source code is made up of the following files.The source code is divided into the following systems.
+The source code is made up of the following files. (This README is in progress; I have not characterized all of the files yet.)
 
 * AI / Critters
   * [ai.c](/nothings/shockmac/blob/master/ShockMac/game/AI.C)              - Lowlevel monster control, death, loot tables, etc.
@@ -33,7 +33,7 @@ The source code is made up of the following files.The source code is divided int
   * [cone.c](/nothings/shockmac/tree/master/ShockMac/game/CONE.C)          - Determine which map grid cells are within a view frustum ("cone")
   * [frcompil.c](/nothings/shockmac/tree/master/ShockMac/game/FRCOMPIL.C)  - Minor initialization & deal with map changing size (which never happens with the game, maybe could only happen in the integrated editor)
   * [gamesort.c](/nothings/shockmac/tree/master/ShockMac/game/GAMESORT.C)  - Sort objects in a single map tile for rendering (complicated because of e.g. force bridge partitioning into top & bottom halves)
-  * [frobj.c](/nothings/shockmac/tree/master/ShockMac/game/FROBJ.C)        - Draw all objects in a single map tile using GMAESORT.C and GAMEOBJ.C
+  * [frobj.c](/nothings/shockmac/tree/master/ShockMac/game/FROBJ.C)        - Draw all objects in a single map tile using GAMESORT.C and GAMEOBJ.C
   * [gameobj.c](/nothings/shockmac/tree/master/ShockMac/game/GAMEOBJ.C)    - 3D rendering of all object types
 
 <!--done A*.c, B*.c, trigger status frmain frcamera frclip cone frcompil gamesort frobj gameobj --!>

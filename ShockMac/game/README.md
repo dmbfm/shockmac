@@ -18,7 +18,7 @@ The source code is made up of the following files. (This README is in progress; 
   * [cybmem.c](CYBMEM.C)      - Manages dynamic memory & resource files
   * [statics.c](STATICS.C)    - Static memory allocations
   * [textmaps.c](TEXTMAPS.C)  - Terrain texture management
-  * [gamestrn.c)(GAMESTRN.C)  - Game strings
+  * [gamestrn.c](GAMESTRN.C)  - Game strings
 * Combat
   * [combat.c](COMBAT.C)      - hit-scan weapon handling
   * [weapons.c](WEAPONS.C)    - projectile/beam weapon handling: shooting, reloading, etc.

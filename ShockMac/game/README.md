@@ -71,7 +71,7 @@ The source code is made up of the following files. (This README is in progress; 
     * [effects.c](EFFECTS.C)    - Create & update animations
     * [palfx.c](PALFX.C)        - Palette effects
   * [render.c](RENDER.C)      - Draw "hack" cameras (POV view from camera in mfd/fullscreen), handle 360-ware in some form, cyberspace game-of-life?
-  * [gr2ss.c](GR2SS.C)        - System Shock wrappers around 2d "gr" graphics functions
+  * [gr2ss.c](GR2SS.C)        - System Shock wrappers around 2D "gr" graphics functions
 * Simulation
   * [gametime.c](GAMETIME.C)  - Update game time & run physics
   * [shodan.c](SHODAN.C)      - Track shodan's "opinion" of you based on what you've destroyed

@@ -96,7 +96,7 @@ The source code is made up of the following files. (This README is in progress; 
   * [gamesys.c](GAMESYS.C)    - various sims: do nearby-object sim (sound, music AI, shodan-appearing-on-displays), player fatigue, shodan-overlay sim, run continuous triggers, check player in hazards, close panel mfds after leaving, sim once-a-second stuff
   * [grenades.c](GRENADES.C)  - Do grenade timing, all explosions
   * [physics.c](PHYSICS.C)    - player physics + throwing physics, interface to EDMS 
-  * (schedule.c)[SCHEDULE.C]  - Delayed event management including all processing of outcomes
+  * [schedule.c](SCHEDULE.C)  - Delayed event management including all processing of outcomes
 * Top-level
   * [gameloop.c](GAMELOOP.C)  - Main game loop, runs or doesn't run other once-per-frame systems
 * Uncategorized

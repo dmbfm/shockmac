@@ -35,7 +35,8 @@ The source code is made up of the following files. (This README is in progress; 
     * [cybermfd.c](CYBERMFD.C)- Cyberspace MFD display
     * [email.c](EMAIL.C)      - Email MFD and inventory display
     * [mfdgames.c](MFDGAMES.C)- MFD minigames
-    * [hflip.c](HFLIP.C)        - Flip bitmap horizontally
+    * [hflip.c](HFLIP.C)      - Flip bitmap horizontally
+    * [fixtrmfd.c](FIXTRMFD.C)- Fixture MFD - MFD brought up when clicking on buttons in the world that display something in MFD.
 * Audio
   * [audiolog.c](AUDIOLOG.C)  - Audio log player
   * [airupt.c](AIRUPT.C)      - Music mixing AI, music transition AI
@@ -63,7 +64,9 @@ The source code is made up of the following files. (This README is in progress; 
     * [frutil.c](FRUTIL.C)      - Utilities for helping with reading from id buffer
     * [frterr.c](FRTERR.C)      - Make and dispatch the terrain polygons 
     * [stars.c](STARS.C)        - Draw stars seen through windows in space station (w/optional gamma-corrected anti-aliasing)
-  * Overlays
+    * [faceobj.c](FACEOBJ.C)    - Objects that behave like map faces
+  * Overlays 
+    * [gamerend.c](GAMEREND.C)  - Special effects dealty/life overlays, player beam weapon, handart (gun etc), emp effects(?), Shodan end-game screen-takeover
     * [handart.c](HANDART.C)    - Compute & manage hand art (i.e. gun at bottom)
     * [vitals.c](VITALS.C)      - Draw health & energy bars, and "status arrows"???
     * [leanmetr.c](LEANMETR.C)  - Interactive posture indicator ("lean meter")
@@ -75,27 +78,25 @@ The source code is made up of the following files. (This README is in progress; 
 * Simulation
   * [gametime.c](GAMETIME.C)  - Update game time & run physics
   * [shodan.c](SHODAN.C)      - Track shodan's "opinion" of you based on what you've destroyed
+  * [froslew.c](FROSLEW.C)    - Move the camera through the world
+  * [gamesys.c](GAMESYS.C)    - various sims: do nearby-object sim (sound, music AI, shodan-appearing-on-displays), player fatigue, shodan-overlay sim, run continuous triggers, check player in hazards, close panel mfds after leaving, sim once-a-second stuff
+* Top-level
+  * [gameloop.c](GAMELOOP.C)  - Main game loop, runs or doesn't run other once-per-frame systems
 * Uncategorized
   * [criterr.c](CRITERR.C)    - Critical error handling
   * [cyber.c](CYBER.C)        - Enter/exit cyberspace
   * [cybrnd.c](CYBRND.C)      - Random number generators
   * [drugs.c](DRUGS.C)        - Dermal patches - general processing, ticking, and specific effects
-  * [saveload.c](SAVELOAD.C)  -- Saving & loading the game
+  * [gamewrap.c](GAMEWRAP.C)  - High-level save/load
+  * [saveload.c](SAVELOAD.C)  - Low-level save/load
   * [wares.c](WARES.C)        -- Management for loadable wares & upgrades
   * [hkeyfunc.c](HKEYFUNC.C)  -- Simple hotkey definitions
   * [map.c](MAP.C)            - Allocate & manange game map
+  * [fullscrn.c](FULLSCRN.C)  - Fullscreen game mode management - handlers, overlays, double buffer
 * Unprocessed
-  * faceobj.c
-  * fixtrmfd.c
-  * froslew.c
-  * fullscrn.c
-  * gameloop.c
-  * gamerend.c
-  * gamesys.c
-  * gametime.c
-  * gamewrap.c
   * gearmfd.c
   * grenades.c
+  * hand.c
   * hkeyfunc.c
   * hud.c
   * hudobj.c
@@ -115,7 +116,7 @@ The source code is made up of the following files. (This README is in progress; 
   * objload.c
   * objprop.c
   * objsim.c
-  * objus.c
+  * objuse.c
   * olh.c
   * olhscan.c
   * palx.c

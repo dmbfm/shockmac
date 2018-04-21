@@ -35,7 +35,7 @@ The source code is made up of the following files. (This README is in progress; 
   * [olh.c](OLH.C)            - On-line help, gives hints during med lab section
   * [olhscan.c](OLHSCAN.C)    - Searches screen for "best" (centermost?) object to give hint
   * Multi-Function Display
-    * [newmfd.c[(NEWMFD.C)      - MFD manager
+    * [newmfd.c](NEWMFD.C)      - MFD manager
     * [ammomfd.c](AMMOMFD.C)  - Display panel with list of weapons and ammo for each
     * [bark.c](BARK.C)        - Spontaneous messages from Shodan etc.
     * [biohelp.c](BIOHELP.C)  - If you have Bioscan upgrade, configure which "biorhythms" are displayed by [status.c]

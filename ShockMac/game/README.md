@@ -27,7 +27,7 @@ The source code is made up of the following files. (This README is in progress; 
 * UI
   * [status.c](STATUS.C)      - "Biorhythm" display logic & rendering
   * [wrapper.c](WRAPPER.C)    - Front-end-ish stuff (options etc), but (maybe) not main menu
-  * [movekeys.c](MOVEKEYS.C)  -- player movement keyboard controls
+  * [movekeys.c](MOVEKEYS.C)  - player movement keyboard controls
   * [hkeyfunc.c](HKEYFUNC.C)  - Game hotkeys/shortcuts (including cheat keys)
   * [hud.c](HUD.C)            - Various hud elements: compass, stats, damage feedback
   * [hudobj.c](HUDOBJ.C)      - Set HUDOBJ_INST flag tested by IS_HUDOBJ() used to clip object rendering to hud
@@ -36,6 +36,7 @@ The source code is made up of the following files. (This README is in progress; 
   * [olhscan.c](OLHSCAN.C)    - Searches screen for "best" (centermost?) object to give hint
   * [screen.c](SCREEN.C)      - Top-level 2D UI screen display/mananagement
   * [popups.c](POPUPS.C)      - Make cursor from dynamic text (hover popups?)
+  * [vmail.c](VMAIL.C)        - Video Mail feedback about plot advances (mining laser, groves, etc)
   * [sideicon.c](SIDEICON.C)  - Side icon (at left & right side of top half of screen) rendering & interaction
   * Multi-Function Display
     * [mfdfunc.c](MFDFUNC.C)  - MFD for weapons, shield, ammo, grenades, hardware, drugs, misc objects
@@ -61,7 +62,7 @@ The source code is made up of the following files. (This README is in progress; 
 * Audio
   * [audiolog.c](AUDIOLOG.C)  - Audio log player
   * [airupt.c](AIRUPT.C)      - Music mixing AI, music transition AI
-  * [musicai.c](MUSICAI.C)    -- Music transition AI
+  * [musicai.c](MUSICAI.C)    - Music transition AI
   * [digifx.c](DIGIFX.C)      - Audio sound triggers, 3d spatializion via volume/pan, etc.
   * [sndcall.c](SNDCALL.C)    - Update audio & handle callbacks
   * [mlimbs.c](MLIMBS.C)      - Dynamic music handling
@@ -107,6 +108,8 @@ The source code is made up of the following files. (This README is in progress; 
   * [grenades.c](GRENADES.C)  - Do grenade timing, all explosions
   * [physics.c](PHYSICS.C)    - player physics + throwing physics, interface to EDMS 
   * [schedule.c](SCHEDULE.C)  - Delayed event management including all processing of outcomes
+  * [drugs.c](DRUGS.C)        - Dermal patches - general processing, ticking, and specific effects
+  * [wares.c](WARES.C)        - Simulation of loadable wares & upgrades
   * "Terrain Function" (physics representation of terrain)
     * [faceobj.c](FACEOBJ.C)  - Objects that behave like map faces
     * [tfdirect.c](TFDIRECT.C)- Terrain-map-data-to-polygon conversion
@@ -119,21 +122,19 @@ The source code is made up of the following files. (This README is in progress; 
   * [player.c](PLAYER.C)      - Initialize player data structure, plus misc player updating
   * [setup.c](SETUP.C)        - Difficulty-setting screen
   * [input.c](INPUT.C)     - Keyboard input, mouse interactions in 3D, input from VR headsets & Spaceball
+  * [cyber.c](CYBER.C)        - Enter/exit cyberspace
+  * [map.c](MAP.C)            - Allocate & manange game map
+  * [fullscrn.c](FULLSCRN.C)  - Fullscreen game mode management - handlers, overlays, double buffer
 * Game objects
   * [objapp.c](OBJAPP.C)      - Tables for introspecting object data for save/load and editor(?)
   * [objects.c](OBJECTS.C)    - object array management: alloc/free slots etc.
   * [objprop.c](OBJPROP.C)    - convert between triples and subclass+offset
   * [objsim.c](OBJSIM.C)      - full-fledged object creation/destruction; determine art/model for rendering in 3D
   * [objuse.c](OBJUSE.C)      - player interaction with objects
-* Uncategorized
-  * [criterr.c](CRITERR.C)    - Critical error handling
-  * [cyber.c](CYBER.C)        - Enter/exit cyberspace
-  * [cybrnd.c](CYBRND.C)      - Random number generators
-  * [drugs.c](DRUGS.C)        - Dermal patches - general processing, ticking, and specific effects
+* Serialization
   * [gamewrap.c](GAMEWRAP.C)  - High-level save/load
   * [saveload.c](SAVELOAD.C)  - Low-level save/load
-  * [wares.c](WARES.C)        -- Management for loadable wares & upgrades
-  * [map.c](MAP.C)            - Allocate & manange game map
-  * [fullscrn.c](FULLSCRN.C)  - Fullscreen game mode management - handlers, overlays, double buffer
-  * [vmail.c](VMAIL.C)      - Video Mail feedback about plot advances (mining laser, groves, etc)
-  * [tools.c](TOOLS.C)     - Utility functions, mostly for displaying 2D UI
+* Utilities
+  * [cybrnd.c](CYBRND.C)      - Random number generators
+  * [criterr.c](CRITERR.C)    - Critical error handling
+  * [tools.c](TOOLS.C)        - Utility functions, mostly for displaying 2D UI

@@ -34,21 +34,30 @@ The source code is made up of the following files. (This README is in progress; 
   * [invent.c](INVENT.C)      - Inventory manipulation / display (trigger actions, use patches, activate grenade, etc)
   * [olh.c](OLH.C)            - On-line help, gives hints during med lab section
   * [olhscan.c](OLHSCAN.C)    - Searches screen for "best" (centermost?) object to give hint
+  * [screen.c](SCREEN.C)      - Top-level 2D UI screen display/mananagement
+  * [popups.c](POPUPS.C)      - Make cursor from dynamic text (hover popups?)
+  * [sideicon.c](SIDEICON.C)  - Side icon (at left & right side of top half of screen) rendering & interaction
   * Multi-Function Display
-    * [newmfd.c](NEWMFD.C)      - MFD manager
-    * [ammomfd.c](AMMOMFD.C)  - Display panel with list of weapons and ammo for each
-    * [bark.c](BARK.C)        - Spontaneous messages from Shodan etc.
-    * [biohelp.c](BIOHELP.C)  - If you have Bioscan upgrade, configure which "biorhythms" are displayed by [status.c]
-    * [cardmfd.c](CARDMFD.C)  - Access card list
-    * [cybermfd.c](CYBERMFD.C)- Cyberspace MFD display
-    * [email.c](EMAIL.C)      - Email MFD and inventory display
+    * [mfdfunc.c](MFDFUNC.C)  - MFD for weapons, shield, ammo, grenades, hardware, drugs, misc objects
+    * [ammomfd.c](AMMOMFD.C)  - MFD center display with list of weapons and ammo for each
+    * [mfdgump.c](MFDGUMP.C)  - MFD for container inventory (e.g. corpses)
+    * [mfdpanel.c](MFDPANEL.C)- MFD for access panels (mini-puzzles + solvers)
+    * [fixtrmfd.c](FIXTRMFD.C)- MFD for fixtures--brought up when clicking on buttons in the world that display something in MFD
+    * [cybermfd.c](CYBERMFD.C)- MFD Cyberspace display
+    * [bark.c](BARK.C)        - MFD Spontaneous messages from Shodan etc.
+    * [cardmfd.c](CARDMFD.C)  - MFD with Access card list
+    * [email.c](EMAIL.C)      - MFD and inventory display of email
+    * [target.c](TARGET.C)    - MFD for targetware
+    * [view360.c](VIEW360.c)  - MFD for 360-view: 3D canvases & rendering, MFD support, ware-interaction
+    * [biohelp.c](BIOHELP.C)  - MFD for Bioscan upgrade, configure which "biorhythms" are displayed by [status.c]
+    * [gearmfd.c](GEARMFD.C)  - MFD for "gear", whatever that is
+    * [viewhelp.c](VIEWHELP.C)- MFD for "View Help" (?!?)
     * [mfdgames.c](MFDGAMES.C)- MFD minigames
+    * [newmfd.c](NEWMFD.C)    - manager of MFDs
     * [minimax.c](MINIMAX.C)  - Minimax solver for Tic-Tac-Toe minigame
     * [hflip.c](HFLIP.C)      - Flip bitmap horizontally
-    * [fixtrmfd.c](FIXTRMFD.C)- Fixture MFD - MFD brought up when clicking on buttons in the world that display something in MFD.
-    * [gearmfd.c](GEARMFD.C)  - "Gear" MFD, whatever hear is
-    * [viewhelp.c](VIEWHELP.C)- The "View Help" MFD (?!?)
-    * [mfdpanel.c](MFDPANEL.C)  - Access panel mini-puzzles (+ solvers)
+    * [plotware.c](PLOTWARE.C)- Feedback about ??? in inventory panel (need to watch let's play to refresh my memory)
+    * [mfdgadg.c](MFDGADG.C)  - MFD "gadgets" (widgets)
 * Audio
   * [audiolog.c](AUDIOLOG.C)  - Audio log player
   * [airupt.c](AIRUPT.C)      - Music mixing AI, music transition AI
@@ -76,8 +85,8 @@ The source code is made up of the following files. (This README is in progress; 
     * [frtables.c](FRTABLES.C)  - Tables describing the vertices & normals & etc of all the different terrain slope shapes
     * [frutil.c](FRUTIL.C)      - Utilities for helping with reading from id buffer
     * [frterr.c](FRTERR.C)      - Make and dispatch the terrain polygons 
-    * [stars.c](STARS.C)        - Draw stars seen through windows in space station (w/optional gamma-corrected anti-aliasing)
-    * [faceobj.c](FACEOBJ.C)    - Objects that behave like map faces
+    * [star.c](STAR.C)          - Draw stars seen through windows in space station (w/optional gamma-corrected anti-aliasing)
+    * [rendtool.c](RENDTOOL.C)  - Misc utility functions for rendering
   * Overlays 
     * [gamerend.c](GAMEREND.C)  - Special effects dealty/life overlays, player beam weapon, handart (gun etc), emp effects(?), Shodan end-game screen-takeover
     * [handart.c](HANDART.C)    - Compute & manage hand art (i.e. gun at bottom)
@@ -89,6 +98,7 @@ The source code is made up of the following files. (This README is in progress; 
     * [palfx.c](PALFX.C)        - Palette effects
   * [render.c](RENDER.C)      - Draw "hack" cameras (POV view from camera in mfd/fullscreen), handle 360-ware in some form, cyberspace game-of-life?
   * [gr2ss.c](GR2SS.C)        - System Shock wrappers around 2D "gr" graphics functions
+  * [objload.c](OBJLOAD.C)    - Load art for objects (e.g. preload for level)
 * Simulation
   * [gametime.c](GAMETIME.C)  - Update game time & run physics
   * [shodan.c](SHODAN.C)      - Track shodan's "opinion" of you based on what you've destroyed
@@ -97,8 +107,24 @@ The source code is made up of the following files. (This README is in progress; 
   * [grenades.c](GRENADES.C)  - Do grenade timing, all explosions
   * [physics.c](PHYSICS.C)    - player physics + throwing physics, interface to EDMS 
   * [schedule.c](SCHEDULE.C)  - Delayed event management including all processing of outcomes
+  * "Terrain Function" (physics representation of terrain)
+    * [faceobj.c](FACEOBJ.C)  - Objects that behave like map faces
+    * [tfdirect.c](TFDIRECT.C)- Terrain-map-data-to-polygon conversion
+    * [tfutil.c](TFUTIL.C)    - Interface to physics?
 * Top-level
-  * [gameloop.c](GAMELOOP.C)  - Main game loop, runs or doesn't run other once-per-frame systems
+  * Main loop
+     * [mainloop.c](MAINLOOP.C)  - Loop over frames, dispatching to current mode's fullscreen mainloop function (amaploop, gameloop)
+     * [gameloop.c](GAMELOOP.C)  - Main game loop, runs or doesn't run other once-per-frame systems
+  * [init.c](INIT.C)          - Central place calling all other initialization functions; fade-in splash screen; exit message
+  * [player.c](PLAYER.C)      - Initialize player data structure, plus misc player updating
+  * [setup.c](SETUP.C)        - Difficulty-setting screen
+  * [input.c](INPUT.C)     - Keyboard input, mouse interactions in 3D, input from VR headsets & Spaceball
+* Game objects
+  * [objapp.c](OBJAPP.C)      - Tables for introspecting object data for save/load and editor(?)
+  * [objects.c](OBJECTS.C)    - object array management: alloc/free slots etc.
+  * [objprop.c](OBJPROP.C)    - convert between triples and subclass+offset
+  * [objsim.c](OBJSIM.C)      - full-fledged object creation/destruction; determine art/model for rendering in 3D
+  * [objuse.c](OBJUSE.C)      - player interaction with objects
 * Uncategorized
   * [criterr.c](CRITERR.C)    - Critical error handling
   * [cyber.c](CYBER.C)        - Enter/exit cyberspace
@@ -107,34 +133,7 @@ The source code is made up of the following files. (This README is in progress; 
   * [gamewrap.c](GAMEWRAP.C)  - High-level save/load
   * [saveload.c](SAVELOAD.C)  - Low-level save/load
   * [wares.c](WARES.C)        -- Management for loadable wares & upgrades
-  * [hkeyfunc.c](HKEYFUNC.C)  -- Simple hotkey definitions
   * [map.c](MAP.C)            - Allocate & manange game map
   * [fullscrn.c](FULLSCRN.C)  - Fullscreen game mode management - handlers, overlays, double buffer
-* Unprocessed
-  * init.c
-  * mainloop.c
-  * input.c
-  * mfdfunc.c
-  * mfdgadg.c
-  * mfdgump.c
-  * objapp.c
-  * objects.c
-  * objload.c
-  * objprop.c
-  * objsim.c
-  * objuse.c
-  * palx.c
-  * player.c
-  * plotware.c
-  * popups.c
-  * rendtool.c
-  * screen.c
-  * setup.c
-  * sideicon.c
-  * status.c
-  * target.c
-  * tfdirect.c
-  * tfutil.c
-  * tools.c
-  * view360.c
-  * vmail.c
+  * [vmail.c](VMAIL.C)      - Video Mail feedback about plot advances (mining laser, groves, etc)
+  * [tools.c](TOOLS.C)     - Utility functions, mostly for displaying 2D UI

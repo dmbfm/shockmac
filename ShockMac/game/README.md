@@ -3,7 +3,7 @@ SOURCE CODE STRUCTURE
 
 This directory contains the source code for the game itself, as opposed to the helper libraries that are found elsewhere.
 
-The source code is made up of the following files. (This README is in progress; I have not characterized all of the files yet.)
+The source code is made up of the following files.
 
 * AI / Critters
   * [ai.c](AI.C)              - Lowlevel monster control, death, loot tables, etc.
